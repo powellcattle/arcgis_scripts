@@ -2,7 +2,6 @@ __author__ = "spowell"
 import arcpy
 
 try:
-
     data_set = arcpy.GetParameterAsText(0)
     is_compress_db = False
     if arcpy.GetArgumentCount() > 1:
@@ -23,7 +22,7 @@ try:
             arcpy.Compress_management(work_space)
         arcpy.AddMessage(f"Accepting User Connections.")
         arcpy.AcceptConnections(work_space, True)
-    else :
+    else:
         arcpy.AddMessage(f"Nothing to version, {data_set} is already registered as versioned.")
 
 except Exception as e:
